@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vue.jsのコンポーネント</title>
+        <meta charset="UTF-8"/>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    </head>
+    <body>
+        <!-- コンポーネント -->
+        <div id="app-7">
+            <ol>
+                <!-- todos配列にある各todoに対して、todo-itemコンポーネントのインスタンスを作成する -->
+                <!-- v-bind:todo="item"はコンポーネントのprops:[todo]とitemを結びつけている -->
+                <todo-item 
+                v-for="item in groceryList"
+                v-bind:todo="item"
+                v-bind:key="item.id"></todo-item>
+            </ol>
+        </div>
+        <script src="component.js"></script>
+    </body>
+</html>

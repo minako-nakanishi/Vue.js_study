@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <title>Vue.jsの練習</title>
+        <meta charset="UTF-8"/>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    </head>
+    <body>
+        <!-- メッセージの出力方法 -->
+        <div id="app">
+            {{message}}
+        </div>
+
+        <!-- 属性のバインディング -->
+        <!-- ツールチップを表示するtitle属性をmessageとバインドしている -->
+        <div id="app-2">
+            <span v-bind:title="message">
+                Hover your mouse over me for a few seconds
+                to see my dynamically bound title!
+            </span>
+        </div>
+        <!-- 条件分岐 -->
+        <div id="app-3">
+            <span v-if="seen">
+                Now you see me.
+            </span>
+        </div>
+        <!-- for文 -->
+        <div id="app-4">
+            <ol>
+                <li v-for="todo in todos">
+                    {{todo.text}}
+                </li>
+            </ol>
+        </div>
+
+
+        <script src="vue.js"></script>
+    </body>
+</html>
