@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>配列の繰り返し出力(for)</title>
+        <meta charset="UTF-8"/>
+        <script src="https://jp.vuejs.org/js/vue.js"></script>
+    </head>
+    <body>
+        <div id="app_for">
+            <ul>
+                <li v-for="item in list">{{item.name}}は、{{item.price}}円</li>
+            </ul>
+        </div>
+        <script>
+            var app_for = new Vue({
+                el: '#app_for',
+                data:{
+                    // リスト値を配列に入れる
+                    list:[
+                        {name: '商品A', price: 1000}, //各リストは連想配列にする
+                        {name: '商品B', price: 2000},
+                        {name: '商品C', price: 980}
+
+                    ]
+                }
+            })
+        </script>
+    </body>
+</html>
