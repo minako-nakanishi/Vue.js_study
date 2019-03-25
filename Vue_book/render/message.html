@@ -9,6 +9,14 @@
         <div id="app">
             {{message}}
         </div>
+        <!-- マスタッシュ内に式を入れる -->
+        <div id="app2">
+            {{lang == 'ja' ? message_ja : message_en}}
+        </div>
+        <!-- バインド属性 -->
+        <div id="app3">
+            <input type="text" v-bind:value="message1" />
+        </div>
         <script src="message.js"></script>
     </body>
 </html>
