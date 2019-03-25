@@ -7,7 +7,8 @@
     </head>
     <body>
         <div id="if1">
-            {{price}}円<span v-if="price < 1000">　セール実施中！！</span>
+            <!-- {{price}}円<span v-if="price < 1000">　セール実施中！！</span> -->
+            {{price}}円<span v-show="price < 1000">　セール実施中！！</span>
         </div>
         <script src="if.js"></script>
     </body>
