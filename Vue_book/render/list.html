@@ -9,7 +9,7 @@
         <div id="list">
             <table border="1">
                 <tr><th>商品コード</th><th>商品名</th></tr>
-                <tr v-for="item in products">
+                <tr v-for="item in products" v-bind:key="item.code"> <!-- key属性をcodeと結びつける -->
                     <td>{{item.code}}</td><td>{{item.name}}</td>
                 </tr>
             </table>
