@@ -28,3 +28,10 @@ var app4 = new Vue({
         pColor: 'blue'
     }
 });
+
+var app5 = new Vue({
+    el: '#app5',
+    data:{
+        isCapital: true
+    }
+})

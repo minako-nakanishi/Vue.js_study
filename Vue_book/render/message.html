@@ -3,6 +3,7 @@
     <head>
         <title>テキストの出力</title>
         <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="message.css" />
         <script src="https://jp.vuejs.org/js/vue.js"></script>
     </head>
     <body>
@@ -20,6 +21,10 @@
         <!-- スタイル属性へのバインド -->
         <div id="app4">
             <p v-bind:style="{fontSize: pSize, color:pColor}">文字サイズは{{pSize}}です。</p>  <!-- CSSのプロパティ名はキャメルケースで記述 -->
+        </div>
+        <!-- クラス属性にバインドする　 -->
+        <div id="app5">
+            <p v-bind:class="{capitalize: isCapital}">hello vue!</p>
         </div>
         <script src="message.js"></script>
     </body>
