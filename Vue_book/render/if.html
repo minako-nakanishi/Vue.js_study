@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>条件つき描画</title>
+        <meta charset="UTF-8"/>
+        <script src="https://jp.vuejs.org/js/vue.js"></script>
+    </head>
+    <body>
+        <div id="if1">
+            {{price}}円<span v-if="price < 1000">　セール実施中！！</span>
+        </div>
+        <script src="if.js"></script>
+    </body>
+</html>
