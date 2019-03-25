@@ -13,11 +13,24 @@ var Movable = function(x,y){
 }
 
 // Movableのインスタンスを生成(最初の座標値を指定)
-var ball = new Movable(10,50);
+// var ball = new Movable(10,50);
 
-console.log(ball.pos.x); //10
-console.log(ball.pos.y); //50
+// console.log(ball.pos.x); //10
+// console.log(ball.pos.y); //50
 
-ball.move(5,3);
-console.log(ball.pos.x); //15
-console.log(ball.pos.y); //53
+// ball.move(5,3);
+// console.log(ball.pos.x); //15
+// console.log(ball.pos.y); //53
+
+var ball = []; //ボールオブジェクトを格納する空の配列を作成
+
+for(var i=0; i<=100; i++){
+    ball[i] = new Movable(
+        Math.floor(Math.random()*window.innerWidth),
+        Math.floor(Math.random()*window.innerHeight)
+    );
+}
+
+for(var i=0; i<100; i++){
+    document.write('<div class="ball" style="top:'+ball[i].pos.y + 'px;left:' + ball[i].pos.x + 'px;">●</div>');
+}
