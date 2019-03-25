@@ -17,6 +17,10 @@
         <div id="app3">
             <input type="text" v-bind:value="message1" />
         </div>
+        <!-- スタイル属性へのバインド -->
+        <div id="app4">
+            <p v-bind:style="{fontSize: pSize, color:pColor}">文字サイズは{{pSize}}です。</p>  <!-- CSSのプロパティ名はキャメルケースで記述 -->
+        </div>
         <script src="message.js"></script>
     </body>
 </html>

@@ -3,7 +3,7 @@ var app = new Vue({
     data:{
         message: 'Hello Vue!'
     }
-})
+});
 
 var app2 = new Vue({
     el: '#app2',
@@ -12,11 +12,19 @@ var app2 = new Vue({
         message_en: 'Hello',
         lang: 'ja'
     }
-})
+});
 
 var app3 = new Vue({
     el: '#app3',
     data:{
         message1: 'こんにちは！！！'
     }
-})
+});
+
+var app4 = new Vue({
+    el: '#app4',
+    data:{
+        pSize: '40px',
+        pColor: 'blue'
+    }
+});
