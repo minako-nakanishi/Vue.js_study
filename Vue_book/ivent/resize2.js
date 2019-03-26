@@ -17,8 +17,8 @@ var app = new Vue({
 
     methods: {
         mousemoveHandler: function($event){
-            this.point.x = $event.clientX;
-            this.point.y = $event.clientY;
+            this.point.x = $event.clientX; //ClientXには現在のX座標が入っている.
+            this.point.y = $event.clientY; //ClientYには現在のY座標が入っている.
         }
     }
 })
