@@ -6,3 +6,10 @@ Vue.filter('number_format', function(val){
     return val.toLocaleString();
 });
 
+/** Vueのインスタンス化 */
+var appfilter = new Vue({
+    el: '#appfilter',
+    data:{
+        price: 1000
+    }
+})
