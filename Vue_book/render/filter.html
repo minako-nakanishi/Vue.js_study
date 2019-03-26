@@ -7,9 +7,10 @@
     </head>
     <body>
         <div id="appfilter">
-            {{price | number_format}}
+            {{price | unit }} {{price | number_format | unit}}
         </div>
         <!-- <script src="filter.js"></script> -->
-        <script src="filter2.js"></script>
+        <!-- <script src="filter2.js"></script> -->
+        <script src="many_filters.js"></script>
     </body>
 </html>
