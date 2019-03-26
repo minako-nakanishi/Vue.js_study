@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>算出プロパティ</title>
+        <meta charset="UTF-8"/>
+        <script src="https://jp.vuejs.org/js/vue.js"></script>
+    </head>
+    <body>
+        <div id="computed">
+            調べたい年：<input type="text" v-model="year"><br>
+            {{year}}年は{{isUrudoshi ? 'うるう年です' : 'うるう年ではありません'}}
+        </div>
+        <script src="computed.js"></script>
+    </body>
+</html>
