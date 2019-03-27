@@ -17,6 +17,16 @@
                 <option value="半年1回以上">半年1回以上</option>
             </select>
         </div>
+        <!-- 複数選択用セレクトボックス -->
+        <div id="select_some">
+            <p>分類：{{selectedCategory}}</p>
+            <select v-model="category" multiple>
+                <option disabled value="">選択してください</option>
+                <option value="宿泊費">宿泊費</option>
+                <option value="食費">食費</option>
+                <option value="交通費">交通費</option>
+            </select>
+        </div>
         <script src="selectbox.js"></script>
     </body>
 </html>
