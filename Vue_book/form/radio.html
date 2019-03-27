@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ラジオボタン</title>
+        <meta charset="UTF-8"/>
+        <script src="https://jp.vuejs.org/js/vue.js"></script>
+    </head>
+    <body>
+        <!-- ラジオボタンは複数の中から一つを選択するシステムのため、computedやmethodは不要 -->
+        <div id="radio">
+            <p>当店のサービスはいかがでしたか？：{{answer}}</p>
+            <label>
+                <input type="radio" v-model="answer" value="素晴らしい">素晴らしい
+            </label>
+            <label>
+                <input type="radio" v-model="answer" value="普通">普通
+            </label>
+            <label>
+                <input type="radio" v-model="answer" value="まだまだ">まだまだ
+            </label>
+        </div>
+        <script src="radio.js"></script>
+    </body>
+</html>
