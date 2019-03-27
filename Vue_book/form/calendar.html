@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>カレンダー</title>
+        <meta charset="UTF-8"/>
+        <script src="https://jp.vuejs.org/js/vue.js"></script>
+    </head>
+    <body>
+        <!-- カレンダー(日付の選択) -->
+        <div id="calendar">
+            <p>ご到着希望日：{{arrival_date}}</p>
+            <input type="date" v-model="arrival_date">
+        </div>
+        <script src="calendar.js"></script>
+    </body>
+</html>
