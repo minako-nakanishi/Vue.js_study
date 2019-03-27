@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>フェードイン・フェードアウト</title>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="fade.css"/>
+        <script src="https://jp.vuejs.org/js/vue.js"></script>
+    </head>
+    <body>
+        <div id="fade">
+            <button v-on:click="show = !show">表示を切り替える</button>
+            <transition>
+                <p v-if="show">
+                    我輩は猫である。名前はまだない。<br>
+                    どこで生まれたかとんと見当がつかぬ。<br>
+                    何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
+                </p>
+            </transition>
+        </div>
+        <script src="fade.js"></script>
+    </body>
+</html>
