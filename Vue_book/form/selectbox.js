@@ -17,4 +17,18 @@ var select_some = new Vue({
             return this.category.length>=1? this.category.join() : '';
         }
     }
+});
+
+var select_dou = new Vue({
+    el: '#select_dou',
+    data:{
+        hyouka: '',
+
+        options:[
+            {code: 'ans1', label:'エクセレント'},
+            {code: 'ans2', label:'まあまあ'},
+            {code: 'ans3', label:'どちらかというと良くない'},
+            {code: 'ans4', label:'だめぽ'}
+        ]
+    }
 })

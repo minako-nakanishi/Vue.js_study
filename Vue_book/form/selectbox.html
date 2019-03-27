@@ -27,6 +27,15 @@
                 <option value="交通費">交通費</option>
             </select>
         </div>
+
+        <!-- セレクトボックスの選択肢を動的に動かす -->
+        <div id="select_dou">
+            <p>評価を選択してください：{{hyouka}}</p>
+            <select v-model="hyouka">
+                <option disabled value="">選択してください</option>
+                <option v-for="item in options" v-bind:value="item.label" v-bind:key="item.code">{{item.label}}</option>
+            </select>
+        </div>
         <script src="selectbox.js"></script>
     </body>
 </html>
