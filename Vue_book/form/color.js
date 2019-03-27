@@ -9,12 +9,14 @@ var app = new Vue({
     },
 
     computed:{
+        // 赤・緑・青を配列で返す算出プロパティ
         colorElement: function(){
             return [this.red, this.green, this.blue];
         }
     },
     
     watch:{
+        // 赤・緑・青のいずれかの変更を監視する
         colorElement: function(newRGB, oldRGB){
             var r = ('00' + newRGB[0].toString(16).toUpperCase()).slice(-2);
             var g = ('00' + newRGB[1].toString(16).toUpperCase()).slice(-2);
@@ -22,13 +24,11 @@ var app = new Vue({
             this.color = '#' + r + g + b;
         },
 
+        // カラーパレットの選択変更を監視する
         color:function(newColor, oldColor){
             this.red = parseInt(newColor.substr(1,2),16);
             this.green = parseInt(newColor.substr(3,2),16);
             this.blue = parseInt(newColor.substr(5,2),16);
         }
     },
-
-    // カラーパレットの選択変更を監視する
-   
 })
