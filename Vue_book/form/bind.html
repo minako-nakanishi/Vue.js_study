@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>フォーム入力バインディング</title>
+        <meta charset="UTF-8"/>
+        <script src="https://jp.vuejs.org/js/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <!-- フォーム入力のバインドにはv-modelを使用する -->
+            <input type="text" v-model="year"/>
+            <p>現在は{{year}}年です</p>
+        </div>
+        <script src="bind.js"></script>
+    </body>
+</html>
