@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ウォッチャ</title>
+        <meta charset="UTF-8"/>
+        <script src="https://jp.vuejs.org/js/vue.js"></script>
+    </head>
+    <body>
+        <div id="watcher">
+            <template v-if="stock >= 1">
+                <span class="num">残り{{stock}}個</span>
+                <button class="btn" v-on:click="onDeleteItem">削除</button>
+            </template>
+            {{message}}
+        </div>
+        <script src="watcher.js"></script>
+    </body>
+</html>
