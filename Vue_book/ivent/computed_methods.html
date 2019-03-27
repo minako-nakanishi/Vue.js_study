@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>computedとmethodsの違い</title>
+        <meta charset="UTF-8"/>
+        <script src="https://jp.vuejs.org/js/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div v-if="show">
+                computed日時：<p>{{nowMethod()}}</p>
+                methods日時：<p>{{nowConputed}}</p>
+            </div>
+            <button type="button" v-on:click="show=!show">表示/非表示</button>
+        </div>
+        <script src="computed_methods.js"></script>
+    </body>
+</html>
