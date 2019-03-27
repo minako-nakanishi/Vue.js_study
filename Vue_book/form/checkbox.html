@@ -6,10 +6,24 @@
     <script src="https://jp.vuejs.org/js/vue.js"></script>
 </head>
 <body>
+    <!-- 単体 -->
     <div id="tantai">
         <p>ケーキはお好きですか？：{{answer}}</p>
             <input type="checkbox" id="cake" v-model="answer" true-value="はい" false-value="いいえ"/>
         <label for="cake">チェックしてください</label>
+    </div>
+    <!-- 複数 -->
+    <div id="fukusu">
+        <p>ご注文をお選びください：{{selection}}</p>
+        <label>
+            <input type="checkbox" v-model="answer2" value="ケーキ">ケーキ
+        </label>
+        <label>
+            <input type="checkbox" v-model="answer2" value="紅茶">紅茶
+        </label>
+        <label>
+            <input type="checkbox" v-model="answer2" value="コーヒー">コーヒー
+        </label>
     </div>
     <script src="checkbox.js"></script>
 </body>

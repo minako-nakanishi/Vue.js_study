@@ -4,4 +4,17 @@ var tantai = new Vue({
     data:{
         answer: "はい"
     }
+});
+
+var fukusu = new Vue({
+    el: '#fukusu',
+    data:{
+        answer2: [] //配列を用意
+    },
+
+    computed:{
+        selection: function(){
+           return this.answer2.join();
+        }
+    }
 })
