@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>セレクトボックス</title>
+        <meta charset="UTF-8"/>
+        <script src="https://jp.vuejs.org/js/vue.js"></script>
+    </head>
+    <body>
+        <!-- 単一セレクトボックス -->
+        <div id="select">
+            <p>当店のご利用頻度は？：{{answer}}</p>
+            <select v-model="answer">
+                <option disabled value="">選択してください</option>
+                <option value="初めて">初めて</option>
+                <option value="週1回以上">週1回以上</option>
+                <option value="月2回以上">月2回以上</option>
+                <option value="半年1回以上">半年1回以上</option>
+            </select>
+        </div>
+        <script src="selectbox.js"></script>
+    </body>
+</html>
