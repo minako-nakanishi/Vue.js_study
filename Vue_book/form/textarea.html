@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>テキストエリアのバインディング</title>
+        <meta charset="UTF-8"/>
+        <script src="https://jp.vuejs.org/js/vue.js"></script>
+    </head>
+    <body>
+        <!-- 一方通行のバインディング(更新内容がPタグ内に反映されない) -->
+        <div id="ippou">
+            <textarea>{{message}}</textarea>
+            <p>入力内容：{{message}}</p>
+        </div>
+
+        <!-- 内容を更新したら、更新内容が即座に　<p>へ反映される -->
+        <div id="souhou">
+            <textarea v-model="message1"></textarea>
+            <p>{{message1}}</p>
+        </div>
+        <script src="textarea.js"></script>
+    </body>
+</html>
