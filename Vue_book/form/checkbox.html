@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>チェックボックス</title>
+    <meta charset="UTF-8"/>
+    <script src="https://jp.vuejs.org/js/vue.js"></script>
+</head>
+<body>
+    <div id="tantai">
+        <p>ケーキはお好きですか？：{{answer}}</p>
+            <input type="checkbox" id="cake" v-model="answer" true-value="はい" false-value="いいえ"/>
+        <label for="cake">チェックしてください</label>
+    </div>
+    <script src="checkbox.js"></script>
+</body>
+</html>
