@@ -9,7 +9,7 @@
         <!-- カレンダー(日付の選択) -->
         <div id="calendar">
             <p>ご到着希望日：{{arrival_date}}</p>
-            <input type="date" v-model="arrival_date">
+            <input type="date" v-model="arrival_date" v-bind:min="min_date">
         </div>
         <script src="calendar.js"></script>
     </body>
