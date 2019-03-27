@@ -8,8 +8,15 @@
     <body>
         <div id="app">
             <!-- フォーム入力のバインドにはv-modelを使用する -->
+            <!-- 全角の場合、Enterを押さないとDOMに反映されない -->
             <input type="text" v-model="year"/>
             <p>現在は{{year}}年です</p>
+        </div>
+        <div id="app2">
+            <!-- 全角でも、入力した時点でDOMに反映される -->
+            <!-- 日本語入力をリアルタイムに反映するには、v-on:inputを使用する -->
+            <input type="text" v-on:input="yearInputHandler" v-bind:value="year2">
+            <p>{{year2}}</p>
         </div>
         <script src="bind.js"></script>
     </body>
