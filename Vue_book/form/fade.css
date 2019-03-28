@@ -12,3 +12,22 @@
 .v-enter-active, .v-leave-active{
     transition: opacity 2.0s;
 }
+
+/* シンプルなフェードイン */
+.fade-enter-active, .fade-leave-active{
+    transition: opacity 0.5s;
+}
+
+.fade-enter, .fade-leave-to{
+    opacity: 0;
+}
+
+/* 左からスライドイン */
+.silentInLeft-enter, .slideInLeft-leave-to{
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.silentInLeft-enter-to, .slideInLeft-leave{
+    transform: translateX(0);
+}
