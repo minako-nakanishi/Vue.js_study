@@ -7,6 +7,10 @@ var nodeCheckbox = nodeApp.querySelectorAll('input[type="checkbox"]'); //チェ�
 nodeCheckbox[0].addEventListener('change', onCheckChanged, false); 
 nodeCheckbox[1].addEventListener('change', onCheckChanged, false);
 
+/** セレクトボックスのイベントハンドラを登録 */
+var nodeSelect = nodeApp.querySelector('.sorting');
+nodeSelect.addEventListener('change',onOrderChange, false);
+
 /** チェック状態イベントハンドラ */
 function onCheckChanged(event){
     var nodeItems = nodeApp.querySelectorAll('.item'); //各商品の要素取得
