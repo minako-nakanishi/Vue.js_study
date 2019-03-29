@@ -15,6 +15,5 @@ var app = new Vue({
             {name: 'Ariel<br>スマホケース', price: 980, image: 'images/05.jpg', delv: 0, isSale: false},
             {name: 'Azrael<br>スマホケース', price: 1580, image: 'images/06.jpg', delv: 0, isSale: false}
         ]
-
     }
-})
+});
