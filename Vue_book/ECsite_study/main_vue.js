@@ -1,3 +1,7 @@
+/** 数値を通貨書式へ変更 */
+Vue.filter('number_format', function(val){
+    return val.toLocaleString();
+})
 
 /** 商品一覧コンポーネント */
 var app = new Vue({
