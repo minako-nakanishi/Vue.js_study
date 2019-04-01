@@ -13,7 +13,11 @@ var app = new Vue({
         sortOrder: 1,
         
         /** 商品リスト */
-        products:[]
+        products:[],
+        /** エラーの有無 */
+        isError: false,
+        /** メッセージ */
+        message: ''
     },
 
     // ライフサイクルハック
@@ -31,9 +35,11 @@ var app = new Vue({
         .done(function(data, textStatus, jqXHR){
             this.products = data;
         }.bind(this))
-        .fail(function(data, textStatus, jqXHR){
+        .fail(function(jqXHR, textStatus, errorThrown){
             console.log("通信が失敗しました")
-        })
+            this.isError = true;
+            this.message = '商品リストの読み込みに失敗しました。';
+        }.bind(this));
     },
 
     computed:{
