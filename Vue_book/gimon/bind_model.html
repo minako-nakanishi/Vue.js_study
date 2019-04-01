@@ -1,0 +1,21 @@
+<!-- Model の値を表示したいだけなら v-bind -->
+<!-- ユーザ入力を即座にModelに反映したいなら v-modelを使う。 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>v-bindとv-modelの違い</title>
+        <meta charset="UTF-8"/>
+        <script src="https://jp.vuejs.org/js/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <!-- テキストボックスの値を変更しても再描画されない(一方通行) -->
+            v-bind {{data1}}
+            <div>v-bind<input type="text" v-bind:value="data1"/></div>
+            <!-- テキストボックスの値を変更すると再描画される(双方通行) -->
+            v-model {{data2}}
+            <div><input type="text" v-model="data2"/></div>
+        </div>
+        <script src="bind_model.js"></script>
+    </body>
+</html>
