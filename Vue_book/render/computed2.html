@@ -7,9 +7,10 @@
 </head>
 <body>
     <div id="computed2">
+        <button id="btn" v-on:click="show =!show">表示・非表示</button>
         <div v-show="show">
-            <p>now1: "{{now1()}}"</p>
-            <p>now2: "{{now2}}"</p>
+            <p>methods: "{{ now1()}}"</p>
+            <p>computed: "{{now2}}"</p>
         </div>
     </div>
     <script src="computed2.js"></script>
