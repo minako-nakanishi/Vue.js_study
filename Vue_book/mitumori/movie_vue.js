@@ -42,6 +42,17 @@ var app = new Vue({
         // 税抜き金額を税込金額へ変換するメソッド
         incTax: function(untaxed){
             return Math.floor(untaxed * (1 + this.taxRate));
+        },
+        getDateDiff: function getDateDiff(dateString1, dateString2){
+            // 日付を表す文字列から日付オブジェクトを生成
+            var date1 = new Date(dateString1);
+            var date2 = new Date(dateString2);
+        
+            // 2つの日付の差分(ミリ秒)を計算
+            var msdiff = date1.getTime() - date2.getTime();
+        
+            // 求めた差分をミリ秒に変換
+            return Math.ceil(msdiff/(1000 * 60 * 60 * 24));
         }
     },
 
