@@ -46,6 +46,34 @@ var app = new Vue({
     },
 
     computed:{
-        
+        // オプション「BGM手配」の税込金額を返す算出プロパティ
+        taxedOpt1: function(){
+            return this.incTax(this.opt1_price);
+        },
+        // オプション「撮影」の税込金額を返す算出プロパティ
+         taxedOpt2: function(){
+            return this.incTax(this.opt2_price);
+        },
+        // オプション「DVD盤面印刷」の税込金額を返す算出プロパティ
+        taxedOpt3: function(){
+            return this.incTax(this.opt3_price);
+        },
+        // オプション「写真スキャニング」の税込金額を返す算出プロパティ
+        taxedOpt4: function(){
+            return this.incTax(this.opt4_price);
+        },
+        // 基本料金(税込)を返すプロパティ
+        taxedBasePrice: function(){
+            // TODO: 基本料金を計算して返す
+        },
+        // オプション料金(税込)を返すプロパティ
+        taxedOptPrice: function(){
+            // TODO: オプション料金を計算して返す
+        },
+        // 合計金額(税込)を返す.
+        taxedTotal: function(){
+            // 基本料金(税込)とオプション料金(税込)の合計を返す
+            return (this.taxedBasePrice + this.taxedOptPrice);
+        }
     }
 })
