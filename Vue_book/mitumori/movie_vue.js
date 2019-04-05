@@ -36,6 +36,16 @@ var app = new Vue({
         // オプション「写真スキャニング」
         opt4_use: false,      // true: 利用する、false: 利用しない
         opt4_price: 500,      // 料金(税抜き)
+    },
 
+    methods:{
+        // 税抜き金額を税込金額へ変換するメソッド
+        incTax: function(untaxed){
+            return Math.floor(untaxed * (1 + this.taxRate));
+        }
+    },
+
+    computed:{
+        
     }
 })
