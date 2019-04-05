@@ -5,7 +5,7 @@
 // コンポーネントのノードルート（全体を囲っているdivタグ）
 var app = document.querySelector('#app');
 // 消費税率
-var tax = 0.08;
+var taxRate = 0.08;
 
 // --------------------------
 // イベントハンドラの割り当て
@@ -14,15 +14,15 @@ var tax = 0.08;
 // ページの読み込み完了イベント
 window.addEventListener('load', onPageLoad, false);
 // 入力内容変更イベント(DVD仕上がり予定日)
-// app.querySelector('#delivery_date').addEventListener('change', onInputChanged, false);
+app.querySelector('#delivery_date').addEventListener('change', onInputChanged, false);
 // // 入力内容変更イベント(BGM手配)
-// app.querySelector('#opt1').addEventListener('change',onInputChanged, false);
+app.querySelector('#opt1').addEventListener('change',onInputChanged, false);
 // // 入力内容変更イベント(撮影)
-// app.querySelector('#opt2').addEventListener('change',onInputChanged, false);
+app.querySelector('#opt2').addEventListener('change',onInputChanged, false);
 // // 入力内容変更イベント(DVD盤面印刷)
-// app.querySelector('#opt3').addEventListener('change',onInputChanged, false);
+app.querySelector('#opt3').addEventListener('change',onInputChanged, false);
 // // 入力内容変更イベント(写真スキャニング)
-// app.querySelector('#opt4').addEventListener('input',onInputChanged, false);
+app.querySelector('#opt4').addEventListener('input',onInputChanged, false);
 
 
 // --------------------------
@@ -47,13 +47,13 @@ function onPageLoad(event){
     dvd_date.setAttribute('min', tommorow());
 
     // フォームの表示を更新する.
-    //updateForm();
+    updateForm();
 }
 
 // 入力内容を変更した時に呼び出されるイベントハンドラ
 function onInputChanged(event){
     // フォームの表示を更新する.
-    //updateForm();
+    updateForm();
 }
 
 // --------------------------
@@ -122,10 +122,10 @@ function taxedOptPrice(){
     // オプション料金
     var optPrice = 0;
     // フォームコントロールを取得
-    var opt1 = qpp.querySelector('#opt1'); // BGM手配
+    var opt1 = app.querySelector('#opt1'); // BGM手配
     var opt2 = app.querySelector('#opt2'); // 撮影
     var opt3 = app.querySelector('#opt3'); // DVD盤面印刷
-    var opt4 = qpp.querySelector('#opt4'); // 写真のスキャニング
+    var opt4 = app.querySelector('#opt4'); // 写真のスキャニング
 
     // BGM手配
     if(opt1.checked){optPrice += 5000}
