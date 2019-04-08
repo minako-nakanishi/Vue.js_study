@@ -1,6 +1,6 @@
 // 数値を通貨書式へ変換するフィルタ
-Vue.filter('number_format', function() {
-    return ValidityState.toLocaleString();
+Vue.filter('number_format', function(val) {
+    return val.toLocaleString();
 })
 
 var app = new Vue({
@@ -60,10 +60,10 @@ var app = new Vue({
         },
         // 日付をYYYY-MM-DDの書式で返す
         formatDate: function(dt) {
-            var y = dt.getFyllYeae(); //年を取得
-            var m = ('00' + (dt.getFullMonth() + 1)).slice(-2) //月を取得し成型
+            var y = dt.getFullYear(); //年を取得
+            var m = ('00' + (dt.getMonth() + 1)).slice(-2); //月を取得し成型
             var d = ('00' + dt.getDate()).slice(-2); // 日付を取得し成型
-            return (y + '' + m + '-' + d)
+            return (y + '-' + m + '-' + d);
         }
     },
 
@@ -149,4 +149,4 @@ var app = new Vue({
         dt.setDate(dt.getDate() - 7);
         this.delivery_date = this.formatDate(dt);
     }
-})
+});
