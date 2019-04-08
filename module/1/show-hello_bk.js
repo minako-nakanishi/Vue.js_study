@@ -4,12 +4,11 @@
 // コンポーネント
 Vue.component('show-hello',{
     // テンプレート部分
-    template: '<div><span>{{name}}</span>：<span>{{price}}円</span></div>', // 全体を単一のタグで閉じる
+    template: '<p>{{message}}</p>',
     // dataオプション
     data: function(){
         return{
-        name: 'スマホケース' ,
-        price: 980
+        message: 'Hello, Vue!!!!!!'
        }
     },
     // メソッド
