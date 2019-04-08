@@ -62,8 +62,6 @@ var app = new Vue({
         }
     },
 
-
-
     computed: {
         // オプション「BGM手配」の税込金額を返す算出プロパティ
         taxedOpt1: function() {
@@ -128,5 +126,16 @@ var app = new Vue({
             // 基本料金(税込)とオプション料金(税込)の合計を返す
             return (this.taxedBasePrice + this.taxedOptPrice);
         }
+    },
+    created: function() {
+        // 今日に日付を取得
+        var dt = new Date();
+        // 挙式日を今日の二ヶ月後に設定
+        dt.setDate(dt.getMonth() + 2);
+        // 挙式日の設定
+        this.wedding_date = this.formatDate(dt);
+        // DVD仕上がり予定日に、挙式日の1週間前の日付を設定
+        dt.setDate(dt.getDate() - 7);
+        this.delivery_date = this.formatDate(dt);
     }
 })
