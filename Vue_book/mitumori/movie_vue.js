@@ -142,7 +142,7 @@ var app = new Vue({
         // 今日に日付を取得
         var dt = new Date();
         // 挙式日を今日の二ヶ月後に設定
-        dt.setDate(dt.getMonth() + 2);
+        dt.setMonth(dt.getMonth() + 2);
         // 挙式日の設定
         this.wedding_date = this.formatDate(dt);
         // DVD仕上がり予定日に、挙式日の1週間前の日付を設定
