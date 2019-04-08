@@ -4,12 +4,7 @@
 // コンポーネント
 Vue.component('show-hello',{
     // テンプレート部分
-
-    // バッククオートで囲むと改行での記載が可能となる
-    template: `
-        <div>
-            <span>{{name}}</span>：<span>{{price}}円</span>
-        </div>`,
+    template: '<div><span>{{name}}</span>：<span>{{price}}円</span></div>', // 全体を単一のタグで閉じる
     // dataオプション
     data: function(){
         return{
