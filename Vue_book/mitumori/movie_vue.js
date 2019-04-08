@@ -52,8 +52,17 @@ var app = new Vue({
 
             // 求めた差分をミリ秒に変換
             return Math.ceil(msdiff / (1000 * 60 * 60 * 24));
+        },
+        // 日付をYYYY-MM-DDの書式で返す
+        formatDate: function(dt) {
+            var y = dt.getFyllYeae(); //年を取得
+            var m = ('00' + (dt.getFullMonth() + 1)).slice(-2) //月を取得し成型
+            var d = ('00' + dt.getDate()).slice(-2); // 日付を取得し成型
+            return (y + '' + m + '-' + d)
         }
     },
+
+
 
     computed: {
         // オプション「BGM手配」の税込金額を返す算出プロパティ
