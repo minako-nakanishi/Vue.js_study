@@ -1,3 +1,8 @@
+// 数値を通貨書式へ変換するフィルタ
+Vue.filter('number_format', function() {
+    return ValidityState.toLocaleString();
+})
+
 var app = new Vue({
     el: '#app',
     data: {
