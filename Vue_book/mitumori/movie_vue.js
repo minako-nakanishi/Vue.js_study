@@ -125,6 +125,12 @@ var app = new Vue({
         taxedTotal: function() {
             // 基本料金(税込)とオプション料金(税込)の合計を返す
             return (this.taxedBasePrice + this.taxedOptPrice);
+        },
+        // 明日の日付をYYYY-MM-DDの書式で返す算出プロパティ
+        tommorow: function() {
+            var dt = new Date(); // 本日の日付
+            dt.setDate(dt.getDate() + 1);
+            return this.formatDate(dt);
         }
     },
     created: function() {
