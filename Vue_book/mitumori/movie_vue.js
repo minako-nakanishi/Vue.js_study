@@ -38,7 +38,7 @@ var app = new Vue({
         opt3_use: false, // true: 利用する、false: 利用しない
         opt3_price: 5000, // 料金(税抜き)
         // オプション「写真スキャニング」
-        opt4_use: false, // true: 利用する、false: 利用しない
+        opt4_num: 0, // 利用枚数
         opt4_price: 500, // 料金(税抜き)
     },
 
@@ -47,7 +47,7 @@ var app = new Vue({
         incTax: function(untaxed) {
             return Math.floor(untaxed * (1 + this.taxRate));
         },
-        getDateDiff: function getDateDiff(dateString1, dateString2) {
+        getDateDiff: function(dateString1, dateString2) {
             // 日付を表す文字列から日付オブジェクトを生成
             var date1 = new Date(dateString1);
             var date2 = new Date(dateString2);
@@ -91,13 +91,13 @@ var app = new Vue({
             // 納期までの残り日数を計算
             var dateDiff = this.getDateDiff(this.delivery_date, (new Date()).toLocaleString());
             // 割増金額を求める
-            if (21 <= dateDiff < 30) {
+            if (21 <= dateDiff && dateDiff < 30) {
                 addPrice = this.addPrice1 // 納期が1ヶ月未満の場合
-            } else if (14 <= dateDiff < 21) {
+            } else if (14 <= dateDiff && dateDiff < 21) {
                 addPrice = this.addPrice2 // 納期が3週間未満の場合
-            } else if (7 <= dateDiff < 14) {
+            } else if (7 <= dateDiff && dateDiff < 14) {
                 addPrice = this.addPrice3 // 納期が2週間未満の場合
-            } else if (3 <= dateDiff < 7) {
+            } else if (3 < dateDiff && dateDiff < 7) {
                 addPrice = this.addPrice4 // 納期が1週間未満の場合
             } else if (dateDiff == 3) {
                 addPrice = this.addPrice5 // 納期が3日後の場合
@@ -122,9 +122,10 @@ var app = new Vue({
             // DVD盤面印刷
             if (this.opt3_use) { optPrice += this.opt3_price }
             // 写真スキャニング
-            if (this.opt4_use) { optPrice += this.opt4_price }
+            if (this.opt4_num == '') { this.opt4_num = 0 };
+            optPrice += this.opt4_num * this.opt4_price;
             // オプション料金(税込)を返す
-            return incTax(optPrice);
+            return this.incTax(optPrice);
         },
         // 合計金額(税込)を返す.
         taxedTotal: function() {
