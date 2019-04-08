@@ -66,7 +66,7 @@
                         <span class="badge badge-danger">必須</span>
                     </label>
                     <div class="col-md-9">
-                        <input class="form-control" type="date" id="delivery_date" min="2019-01-03" placeholder="日付をお選びください。">
+                        <input class="form-control" type="date" id="delivery_date" min="2019-01-03" placeholder="日付をお選びください。" v-bind:min="tommorow" v-model="delivery_date">
                         <small class="form-text">挙式の1週間前までにDVDが必要な場合が多いため、仕上がり予定日を挙式日の1週間前に設定しております。</small>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
                     <label class="col-md-3 col-form-label pt-0">基本料金（税込）</label>
                     <div class="col-md-9">
                         <div class="input-group">
-                            <input type="text" class="form-control text-right" id="sum_base" value="32,400" readonly>
+                            <input type="text" class="form-control text-right" id="sum_base" v-bind:value="taxedBasePrice | number_format" readonly>
                             <div class="input-group-append">
                                 <label class="input-group-text">円</label>
                             </div>
