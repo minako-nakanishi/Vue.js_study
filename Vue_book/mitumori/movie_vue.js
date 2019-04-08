@@ -101,7 +101,18 @@ var app = new Vue({
         },
         // オプション料金(税込)を返すプロパティ
         taxedOptPrice: function() {
-            // TODO: オプション料金を計算して返す
+            // オプション料金
+            var optPrice = 0;
+            // BGM手配
+            if (this.opt1_use) { optPrice += this.opt1_price }
+            // 撮影
+            if (this.opt2_use) { optPrice += this.opt2_price }
+            // DVD盤面印刷
+            if (this.opt3_use) { optPrice += this.opt3_price }
+            // 写真スキャニング
+            if (this.opt4_use) { optPrice += this.opt4_price }
+            // オプション料金(税込)を返す
+            return incTax(optPrice);
         },
         // 合計金額(税込)を返す.
         taxedTotal: function() {
