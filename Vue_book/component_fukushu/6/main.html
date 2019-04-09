@@ -6,7 +6,8 @@
 </head>
 <body>
   <div id="app">
-    
+    <!-- 子に「child-click」イベントが発生したら親の「priceDown」を呼び出す。 -->
+    <my-product v-on:child-click="priceDown" v-bind:price="price"></my-product>
   </div>
 </body>
 </html>
