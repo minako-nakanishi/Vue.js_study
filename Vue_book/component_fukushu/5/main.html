@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>親から子への受け渡し</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- 「name」と「price」にデータを入れて子に渡す -->
+      <my-product v-bind:name="name" v-bind:price="price"></my-product>
+    </div>
+    <script src="https://jp.vuejs.org/js/vue.js"></script>
+    <script src="my-product.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
