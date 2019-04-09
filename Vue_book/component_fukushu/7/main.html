@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <title>コンポーネントを繰り返し描画</title>
+  <meta charset="utf-8" />
+</head>
+<body>
+  <!-- 子コンポーネントのテンプレートで配列を描画する -->
+  <div id="app">
+    <ul>
+      <my-product v-for="item in products" v-bind="item" v-bind:key="item.id"></my-product>
+    </ul>
+  </div>
+  <script src="https://jp.vuejs.org/js/vue.js"></script>
+  <script src="my-product.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
