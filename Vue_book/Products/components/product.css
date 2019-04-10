@@ -1,0 +1,59 @@
+/* 商品コンポーネントのスタイル */
+.item{
+  flex: 0 1 250px;
+  margin-bottom: 30px;
+}
+
+/* 画像と画像の説明のスタイル */
+.item .image{
+  position: relative;
+  text-align: center;
+}
+
+/* 画像のみのスタイル */
+.item .image img{
+  width: 100%;
+  height: auto;
+}
+
+/* セールの表示 */
+.item .status{
+  position: absolute;
+  border-radius: 50%;
+  width: 4em;
+  height: 4em;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #bf0000;
+  color: #fff;
+}
+
+/* 商品詳細 */
+.item .detail{
+  text-align: center;
+}
+
+/* 値段+円 */
+.item .price{
+  display: inline-block;
+}
+
+/* 値段 */
+.item .price span{
+  font-size: 180%;
+}
+
+/* 送料有り */
+.item .shipping-fee{
+  display: inline-block;
+  background: #f7cd12;
+  color: #000;
+}
+
+/* 送料無料 */
+.item .shipping-fee.none{
+  background: #bf0000;
+  color: #fff;
+}
