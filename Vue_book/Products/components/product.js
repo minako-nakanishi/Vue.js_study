@@ -8,7 +8,7 @@ var product = {
         <div class="status">SALE</div>
       </template>
       <img v-bind:src="product.image" alt="">
-      <figurecaption v-html="product.name"></figurecaption>
+      <figcaption v-html="product.name"></figcaption>
     </figure>
     <div class="detail">
       <div class="price"><span>{{product.price | number_format}}</span>円(税込)</div>
