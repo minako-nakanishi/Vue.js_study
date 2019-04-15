@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My first Vue app</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <h1>Vue.js</h1>
+    <!-- 表示のためのタグ -->
+    <div id="app">
+        {{message * 1.08}}円
+    </div>
+    <hr />
+    <!-- <button onclick="doAction();">click</button> -->
+    <input type="text" onInput="doAction(event);" <!-- Vue.jsのスクリプト -->
+
+    <script>
+        var data = {
+            message: ''
+        };
+
+        var app = new Vue({
+            el: '#app',
+            data: data
+        })
+
+        function doAction(event) {
+
+            data.message = event.target.value;
+        }
+    </script>
+</body>
+
+</html>
