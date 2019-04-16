@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>コンポーネントHELLO</title>
+      <meta charset="utf-8" />
+      <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <h1>Vue.js</h1>
+    <div id="app">
+      <div><hello name="Taro"></hello></div>
+      <div><hello name="Hanako"></hello></div>
+    </div>
+
+  <script>
+    /** コンポーネント名 → hello */
+    /** templateに設定された内容がコンポーネントとして表示される */
+    Vue.component('hello',
+    {
+      props:['name'], //属性nameを指定。（name:String）のように型をつけてもOK.
+      template: '<p class="hello">Hello, {{name}}!</p>'
+    })
+
+    /** Vueのインスタンス化 */
+    var app = new Vue({
+      el: '#app'
+    })
+  </script>
+  </body>
+</html>

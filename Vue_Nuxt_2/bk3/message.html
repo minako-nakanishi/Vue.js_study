@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>コンポーネントHELLO</title>
+      <meta charset="utf-8" />
+      <script src="https://unpkg.com/vue"></script>
+      <style>
+        .hello{
+          font-size: 20pt;
+          font-weight: bold;
+          border: 1px solid magenta;
+          padding: 5px 10px 0px 10px;
+          margin: 10px;
+        }
+      </style>
+  </head>
+  <body>
+    <h1>Vue.js</h1>
+    <div id="app">
+      <hello />
+    </div>
+
+  <script>
+    /** コンポーネント名 → hello */
+    /** templateに設定された内容がコンポーネントとして表示される */
+    Vue.component('hello',
+    {
+      // dataは関数型にする
+      data: function(){
+        return {
+          message: 'これは新しいメッセージですます。'
+        };
+      },
+      template: '<p class="hello">{{message}}</p>'
+    })
+
+    /** Vueのインスタンス化 */
+    var app = new Vue({
+      el: '#app'
+    })
+  </script>
+  </body>
+</html>
