@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>v-for</title>
+      <meta charset="utf-8" />
+      <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <style>
+    table tr th{
+      font-size: 16pt;
+      color: white;
+      background-color: blue;
+      padding: 5px 15px;
+    }
+
+    table tr td{
+      font-size: 16pt;
+      color: gray;
+      border: 1px solid gray;
+      padding: 5px 15px;
+    }
+    </style>
+
+    <h1>Vue.js</h1>
+    <div id="app">
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Mail</th>
+          <th>Tel</th>
+        </tr>
+        <tr v-for="(item, id) in items" v-if="id % 2 == 0"> <!-- v-for="(要素, インデックス) in 配列" -->
+          <td>{{id}}</td> <!-- id単一でインデックス番号を表示できる -->
+          <td>{{item.mail}}</td>
+          <td>{{item.tel}}</td>
+        </tr>
+
+        <tr v-else>
+          <td>***非公開***</td>
+          <td>***非公開**</td>
+          <td>***非公開***</td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      // テーブルに格納するデータを作成
+      var data = {
+        items:[ // Taro, Jiro, Hanakoがキーとなるので、名前は重複不可
+          {name: 'Taro',mail: 'taro@one', tel: '090-1111-2222'},
+          {name: 'Jiro',mail: 'jiro@two', tel: '090-1111-3333'},
+          {name: 'Hanako',mail: 'hanako@okok', tel: '090-5555-2222'}
+        ]
+      }
+
+      // Vueのインスタンス化
+      var app = new Vue({
+        el: '#app',
+        data: data
+      })
+    </script>
+  </body>
+</html>
