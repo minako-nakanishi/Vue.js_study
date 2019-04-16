@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>コンポーネントHELLO</title>
+      <meta charset="utf-8" />
+      <script src="https://unpkg.com/vue"></script>
+      <style>
+        .hello{
+          font-size: 20pt;
+          font-weight: bold;
+          border: 1px solid magenta;
+          padding: 5px 10px 0px 10px;
+          margin: 10px;
+        }
+      </style>
+  </head>
+  <body>
+    <h1>Vue.js（練習）</h1>
+    <div id="app">
+      <item v-for="i in list" v-bind:value="i"/>
+    </div>
+
+    <script>
+
+      Vue.component('item',{
+        props:['value'],
+        template: '<p class="shop">この商品は{{value}}です。</p>'
+      })
+
+      // Vueのインスタンス化
+      var app = new Vue({
+        el: '#app',
+        data:{
+          list: ['本','ぺん','鉛筆']
+        }
+      });
+    </script>
+  </body>
+</html>

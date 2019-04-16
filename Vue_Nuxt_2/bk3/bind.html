@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>コンポーネントHELLO</title>
+      <meta charset="utf-8" />
+      <script src="https://unpkg.com/vue"></script>
+      <style>
+        .hello{
+          font-size: 20pt;
+          font-weight: bold;
+          border: 1px solid magenta;
+          padding: 5px 10px 0px 10px;
+          margin: 10px;
+        }
+      </style>
+  </head>
+  <body>
+    <h1>Vue.js</h1>
+    <div id="app">
+      <!-- v-forで配列dataの要素をitemへ格納 -->
+      <!-- v-bind:name="item"でname属性へitemに格納されたdataの配列要素を結びつける -->
+      <hello v-for="item in data" v-bind:name="item" />
+    </div>
+
+  <script>
+  // コンポーネント
+  var hello = Vue.component('hello',{
+       //name属性の値をtemplateの{{nameへ入れる}}
+      props:['name'],
+      template: '<p class="hello">Hello, {{name}}!</p>'
+    })
+
+  /** Vueのインスタンス化 */
+  var app = new Vue({
+    el: '#app',
+    // 挿入するデータ
+    data: {
+      data:['Sayaka', 'Kotomi', 'Rieko', 'Yumiko', 'Mai', 'Chinami']
+    }
+  })
+  </script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>templateタグ</title>
+      <meta charset="utf-8" />
+      <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <style>
+      table tr th{
+        font-size: 16pt;
+        color: white;
+        background-color: blue;
+        padding: 5px 15px;
+      }
+
+      table tr td{
+        font-size: 16pt;
+        color: gray;
+        border: 1px solid gray;
+      }
+
+      li{
+        font-size: 16pt;
+        color: gray;
+      }
+    </style>
+
+    <h1>Vue.js</h1>
+    <div id="app">
+      <template v-if="flag"> <!-- templateはひとまとめになる -->
+        <p>※データをテーブル表示する</p>
+        <table>
+          <tr><th>Name</th><th>mail</th></tr>
+          <tr><td>Taro</td><td>taro@yamada</td></tr>
+          <tr><td>Hanako</td><td>hanako@flower</td></tr>
+          <tr><td>Sachiko</td><td>sachiko@happy</td></tr>
+        </table>
+      </template>
+      <template v-else>  <!-- templateはひとまとめになる -->
+        <p>※データをテーブル表示する</p>
+        <ul>
+          <li>Taroのアドレスは taro@yamadaです。</li>
+          <li>Hanakoのアドレスは hanako@flowerです。</li>
+          <li>Sachikoのアドレスは sachiko@happyです。</li>
+        </ul>
+      </template>
+    </div>
+    <hr />
+    <button onclick="doAction()">click</button>
+
+    <script>
+      // データを用意(flag)
+      var data = {
+        flag: true
+      };
+
+      // Vueをインスタンス化
+      var app = new Vue({
+        el: '#app',
+        data: data
+      });
+
+      // ボタンクリック時のフラグの切り替え
+      function doAction(){
+        data.flag = !data.flag;
+      }
+    </script>
+  </body>
+</html>

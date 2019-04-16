@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>bind style</title>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <h1>Vue.js</h1>
+    <div id="app">
+    <p v-bind:style="{fontSize: '20pt', color:'red',border:'2px solid cyan'}">
+      {{message}}
+    </p>
+    </div>
+    <script>
+      var data = {
+        message: 'Hello, Vue!'
+      }
+
+      var app = new Vue({
+        el: '#app',
+        data: data
+      })
+    </script>
+  </body>
+</html>

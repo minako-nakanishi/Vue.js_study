@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>コンポーネントHELLO</title>
+      <meta charset="utf-8" />
+      <script src="https://unpkg.com/vue"></script>
+      <style>
+        .hello{
+          font-size: 20pt;
+          font-weight: bold;
+          border: 1px solid magenta;
+          padding: 5px 10px 0px 10px;
+          margin: 10px;
+        }
+      </style>
+  </head>
+  <body>
+    <h1>Vue.js</h1>
+    <div id="app">
+      <div><family v-bind:name="ii" /></div>
+      <div><input type="text" v-model="ii" /></div>
+    </div>
+
+  <script>
+
+    // コンポーネント
+    Vue.component('family',{
+      props: ['name'],
+      template: '<p class="family">Hello, {{name}}!</p>'
+    });
+
+    // ビューのインスタンス化
+    var app = new Vue({
+      el: '#app',
+      data:{
+        ii: 'no-name' //テキストボックスに値が入ると先のvalueが変わる
+      }
+    });
+  </script>
+  </body>
+</html>
