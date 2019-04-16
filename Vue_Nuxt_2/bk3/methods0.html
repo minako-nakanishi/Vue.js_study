@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>コンポーネントHELLO</title>
+      <meta charset="utf-8" />
+      <script src="https://unpkg.com/vue"></script>
+      <style>
+      .red{
+        color: white;
+        background-color: red;
+      }
+      </style>
+  </head>
+  <body>
+    <h1>Vue.js</h1>
+    <div id="app">
+      <family />
+    </div>
+    <script>
+
+    Vue.component('family',
+    {
+      data: function(){
+        return {
+          num: 0,
+          message: 'Please type a number'
+        };
+      },
+
+    methods:{
+      calc: function(){
+        var total = 0;
+        for(var i=0; i<this.num; i++){
+          total += i
+        }
+        this.message = "total: " + total;
+      }
+    },
+      template: '<div><p class="home">{{message}}</p><div><input type="number" v-on:input="calc" v-model="num"></div></div>'
+    });
+
+      var app = new Vue({
+        el: '#app'
+      });
+    </script>
+  </body>
+</html>

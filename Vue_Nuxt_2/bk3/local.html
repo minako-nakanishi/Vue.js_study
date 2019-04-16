@@ -17,25 +17,27 @@
   <body>
     <h1>Vue.js</h1>
     <div id="app">
-      <onigiri />
+      <div><hello/></div>
+      <div><hello/></div>
+      <div><hello/></div>
     </div>
 
   <script>
 
-  Vue.component('onigiri',
-  {
-    data: function(){
-      return {
-        counter: 0
-      };
-    },
-    template: '<p v-on:click="counter++;" class="hello">clicked: {{counter}}</p>'
-  });
-
   /** Vueのインスタンス生成 */
   var app = new Vue({
-    el: '#app'
-  })
+    el: '#app',
+    components:{ // ローカルコンポーネント 
+      hello:{
+        data: function(){
+          return {
+            counter: 0
+          };
+        },
+        template: '<p v-on:click="counter++;" class="hello">clicked: {{counter}}</p>'
+      }
+    }
+  });
   </script>
   </body>
 </html>
