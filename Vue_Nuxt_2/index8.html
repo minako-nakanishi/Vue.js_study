@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>bind style</title>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <style>
+      .ok{
+        font-size: 24pt;
+        color: blue;
+        padding: 5px 10px;
+        border: 2px solid red;
+      }
+      .ng{
+        font-size: 20pt;
+        color: gray;
+      }
+    </style>
+    <h1>Vue.js</h1>
+    <div id="app">
+      <p v-if="flag" class="ok">
+        これは正常な表示です。
+      </p>
+      <p v-else class="ng">
+        ※現在、問題が発生中です...
+      </p>
+      <button onclick="doAction()">click</button>
+    </div>
+    <script>
+
+    // 使用するデータ(フラグ)
+    var data = {
+      flag: true
+    };
+
+    // Vueのインスタンス化
+    var app = new Vue({
+      el: '#app',
+      data: data
+    });
+
+    function doAction(){
+      data.flag = !data.flag;
+    };
+    </script>
+  </body>
+</html>

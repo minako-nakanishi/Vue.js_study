@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>複雑な実装</title>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+  </head>
+  <body>
+    <h1>Vue.js</h1>
+    <div id="app">
+      {{message}}
+    </div>
+    <hr />
+    <button onclick="doAction()">click</button>
+    <script>
+
+    /** 使用データを作成 */
+     var data = {
+       message: 'Hello, Everyone!!!!!!!!!',
+       items: ['one', 'two', 'three', 'four', 'five']
+     }
+
+     var app = new Vue({
+       el: "#app",
+       data: data,
+       render: (h)=>{
+         return h("div", [
+           h("p",{style: 'font-size: 20pt;'},data.message),
+           h("ol", data.items.map(i=> v('li', i)))
+         ]);
+       }
+     })
+
+     function doAction(){
+       var newdata = ['いち','に','さん','よん','ご'];
+       data.message = 'クリックしました。';
+       data.items[0] = 'ぜろ';
+       for(n in data.items){
+         data.items[n] = newdata[n];
+       }
+     }
+
+    </script>
+  </body>
+</html>

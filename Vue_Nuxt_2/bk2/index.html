@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>vue</title>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <h1>Vue.js</h1>
+    <div id="app">
+      <p v-html="message"></p>
+    </div>
+    <script>
+    // 使用するデータを用意
+    var data = {
+      message: '<h2 style="color:red;">vue.js sample message</h2>'
+    };
+
+    var app = new Vue({
+      el: '#app',
+      data: data
+    })
+    </script>
+  </body>
+</html>

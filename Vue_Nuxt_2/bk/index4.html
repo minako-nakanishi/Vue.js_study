@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>vue</title>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <h1>Vue.js</h1>
+    <div id="app">
+      {{message}}
+    </div>
+    <hr />
+    <script>
+
+      var data={
+        message: 'Hello'
+      };
+
+      var app = new Vue({
+        el: '#app',
+        data:data,
+        render: (element)=>{
+          return element("ol",
+          [
+            element("li",{'style':'font-size:20px; color: red'},"item1"),
+            element("li",{'style':'font-size:20px; color: red'},"item2"),
+            element("li",{'style':'font-size:20px; color: red'},"item3")
+          ]
+        )}
+      });
+
+    </script>
+  </body>
+</html>

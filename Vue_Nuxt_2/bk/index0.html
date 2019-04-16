@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>bind style</title>
+    <title>vue</title>
     <meta charset="utf-8" />
     <script src="https://unpkg.com/vue"></script>
   </head>
   <body>
     <h1>Vue.js</h1>
     <div id="app">
-    <p v-bind:style="{fontSize: '20pt', color:'red',border:'2px solid cyan'}">
       {{message}}
-    </p>
     </div>
+    <hr />
+    <button onclick="doAction()">click</button>
     <script>
-      var data = {
+
+      var data={
         message: 'Hello, Vue!'
-      }
+      };
 
       var app = new Vue({
         el: '#app',
-        data: data
-      })
+        data:data  //data = {message: 'Hello, Vue!'}
+      });
+
+      function doAction(){
+        data.message = "You clicked!!!!"
+      }
     </script>
   </body>
 </html>

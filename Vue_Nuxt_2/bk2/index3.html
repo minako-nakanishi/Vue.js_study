@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>vue</title>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <h1>Vue.js</h1>
+    <div id="app">
+      <ol v-html="messages"></ol>
+      <hr />
+      <input id="inp" type="text" onInput="doInput(event);" />
+      <button onclick="doAction();">click</button>
+    </div>
+    <script>
+    // 使用するデータを用意
+    var data = {
+      messages: '<li>Hello Vue!</li>'
+    };
+
+    var app = new Vue({
+      el: '#app',
+      data: data
+    });
+
+    function doInput(event){
+      data.message = event.target.value;
+    }
+
+    function doAction(){
+      data.messages = '<li>' + data.message +'</li>' + data.messages;
+      document.getElementById("inp").value = '';
+    }
+    </script>
+  </body>
+</html>

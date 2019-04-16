@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>vue</title>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <style>
+    .red{
+      font-size: 20pt;
+      font-weight: bold;
+      font-style: normal;
+      color: red;
+    }
+
+    .blue{
+      font-size: 24pt;
+      font-weight: plain;
+      font-style: italic;
+      color: blue;
+    }
+    </style>
+
+    <h1>Vue.js</h1>
+    <div id="app">
+      <p v-bind:class="{red:isRed, blue:isBlue}">{{message}}</p>
+    </div>
+    <hr />
+    <button onclick="doAction();">click</button>
+    <script>
+    // 使用するデータを用意
+    var data = {
+      message: 'Hello, Vue!',
+      isRed: true,
+      isBlue: false
+    };
+
+    var app = new Vue({
+      el: '#app',
+      data: data
+    });
+
+    function doAction(){
+      data.isRed = !data.isRed;
+      data.isBlue = !data.isBlue;
+    }
+    </script>
+  </body>
+</html>
