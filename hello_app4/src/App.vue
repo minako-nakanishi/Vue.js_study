@@ -1,7 +1,6 @@
 <!-- Vue.jsのコンポーネントを定義しているファイル -->
 <template>
-  <HelloWorld title="Hello" message="※これは、Vue.jsのサンプルプロジェクトです"/> <!-- HelloWorldコンポーネントの配置 -->
-  </div>
+  <HelloWorld title="Hello"/> <!-- HelloWorldコンポーネントの配置 -->
 </template>
 
 <script>
