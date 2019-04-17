@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/HelloWorld.vue' // HelloWorld.vueの読み込み
 
 export default { //コンポーネントの設定内容をまとめてエクスポート
   name: 'app',
