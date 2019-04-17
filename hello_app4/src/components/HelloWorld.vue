@@ -1,7 +1,12 @@
 <template>
   <div class="hello">
-    <h1>{{title}}</h1>
+    <h1>{{title}}</h1> <!-- App.vueでタイトルが変更された場合、ここへ反映される(親→子) -->
     <p>{{message}}</p>
+    <hr />
+    <div>
+      <input type="text" v-model="input" />
+      <button v-on:click="doAction()">click</button>
+    </div>
   </div>
 </template>
 
@@ -11,7 +16,19 @@
     // HelloWorldタグの属性
     props:{
       title: String,
-      message: String
+    },
+    // messageとinputは表示が変わるため、dataへ移設
+    data: function(){
+      return {
+        message: 'お名前は？',
+        input: 'no-name'
+      };
+    },
+    methods:{
+      doAction: function(){
+        this.message = 'こんにちは、' + this.input + 'さん！';
+        this.$emit('result-event',this.input); //テキストボックスの入力値を親へ渡す
+      }
     }
   }
 </script>
