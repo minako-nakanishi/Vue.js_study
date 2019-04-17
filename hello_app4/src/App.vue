@@ -1,8 +1,6 @@
 <!-- Vue.jsのコンポーネントを定義しているファイル -->
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <HelloWorld title="Hello" message="※これは、Vue.jsのサンプルプロジェクトです"/> <!-- HelloWorldコンポーネントの配置 -->
   </div>
 </template>
 
