@@ -24,27 +24,22 @@
   {
     data: function(){
       return {
-        counter:0,
-        isRed: false
-      }
+        num: 0,
+        message: 'type a number.'
+      };
     },
     methods:{
-      doAction: function(event){
-        this.counter++; //クリック数を1足す
-        if(this.counter > 10){
-          this.counter = 0; //クリック数を0へ戻す
+      calc: function(event){
+        var total = 0;
+        for(var i=0; i<=this.num; i++){
+          total += i;
         }
-        if(this.counter % 2 == 0){
-          this.isRed = false
-        }else{
-          this.isRed = true;
-        }
-      },
+        this.message = "total: " + total;
+      }
     },
 
-    template: '<p v-bind:class="{red:isRed}" v-on:click="doAction" class="hello">clicked: {{counter}}</p>'
-
-  })
+    template: '<div><p class="hello">{{message}}</p><div><input type="number" v-on:input="calc" v-model="num"></div></div>'
+  });
 
   // Vueをインスタンス化
   var app = new Vue({
