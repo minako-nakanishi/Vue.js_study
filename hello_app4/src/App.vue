@@ -1,6 +1,11 @@
 <!-- Vue.jsのコンポーネントを定義しているファイル -->
 <template>
-  <HelloWorld title="Hello"/> <!-- HelloWorldコンポーネントの配置 -->
+  <div id="app">
+    <!-- v-bind:titleのあたいはdataのmessage(HELLO)にバインドされている -->
+    <HelloWorld v-bind:title="message" v-on:result-event="appAction"/> <!-- HelloWorldコンポーネントの配置 -->
+    <hr />
+    <p>{{result}}</p>
+  </div>
 </template>
 
 <script>
@@ -10,6 +15,21 @@ export default { //コンポーネントの設定内容をまとめてエクス�
   name: 'app',
   components: {
     HelloWorld
+  },
+  data: function(){
+    return {
+      message: 'HELLO',
+      result: 'no-event'
+    };
+  },
+  methods:{
+    // doAction: function(){
+    //   var input = prompt("new title:");
+    //   this.message = input
+    // }
+    appAction: function(message){
+      this.result = '(*** you send: "' + message + '".***)';
+    }
   }
 }
 </script>

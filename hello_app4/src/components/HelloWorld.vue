@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{title}}</h1>
+    <h1>{{title}}</h1> <!-- App.vueでタイトルが変更された場合、ここへ反映される(親→子) -->
     <p>{{message}}</p>
     <hr />
     <div>
@@ -17,6 +17,7 @@
     props:{
       title: String,
     },
+    // messageとinputは表示が変わるため、dataへ移設
     data: function(){
       return {
         message: 'お名前は？',
@@ -26,6 +27,7 @@
     methods:{
       doAction: function(){
         this.message = 'こんにちは、' + this.input + 'さん！';
+        this.$emit('result-event',this.input); //テキストボックスの入力値を親へ渡す
       }
     }
   }
