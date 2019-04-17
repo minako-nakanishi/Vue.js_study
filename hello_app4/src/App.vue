@@ -1,3 +1,4 @@
+<!-- Vue.jsのコンポーネントを定義しているファイル -->
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
@@ -8,7 +9,7 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 
-export default {
+export default { //コンポーネントの設定内容をまとめてエクスポート
   name: 'app',
   components: {
     HelloWorld
