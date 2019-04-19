@@ -2,9 +2,8 @@
 <template>
   <div id="app">
     <!-- v-bind:titleのあたいはdataのmessage(HELLO)にバインドされている -->
-    <HelloWorld v-bind:title="message" v-on:result-event="appAction"/> <!-- HelloWorldコンポーネントの配置 -->
+    <HelloWorld v-bind:title="message" v-bind:num="num"/> <!-- HelloWorldコンポーネントの配置 -->
     <hr />
-    <p>{{result}}</p>
   </div>
 </template>
 
@@ -18,18 +17,9 @@ export default { //コンポーネントの設定内容をまとめてエクス�
   },
   data: function(){
     return {
-      message: 'HELLO',
-      result: 'no-event'
+      message: 'validate',
+      num: 12
     };
-  },
-  methods:{
-    // doAction: function(){
-    //   var input = prompt("new title:");
-    //   this.message = input
-    // }
-    appAction: function(message){
-      this.result = '(*** you send: "' + message + '".***)';
-    }
   }
 }
 </script>
