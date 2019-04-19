@@ -2,5 +2,8 @@
   "name": "my-app",
   "scripts": {
     "dev": "nuxt"
+  },
+  "dependencies": {
+    "nuxt": "^2.6.2"
   }
 }
