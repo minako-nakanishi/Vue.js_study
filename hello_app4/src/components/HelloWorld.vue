@@ -4,8 +4,7 @@
     <p>{{message}}</p>
     <hr />
     <div>
-      <input type="text" v-model="input" />
-      <button v-on:click="doAction()">click</button>
+      <p>Number: {{num}}</p>
     </div>
   </div>
 </template>
@@ -16,19 +15,19 @@
     // HelloWorldタグの属性
     props:{
       title: String,
+      num:{
+        type: Number,
+        default: 100,
+        validator: function(value){
+          return value == parseInt(value) && value >= 0 && value <= 100;
+        },
+      },
     },
     // messageとinputは表示が変わるため、dataへ移設
     data: function(){
       return {
-        message: 'お名前は？',
-        input: 'no-name'
+        message: 'バリデーションチェック'
       };
-    },
-    methods:{
-      doAction: function(){
-        this.message = 'こんにちは、' + this.input + 'さん！';
-        this.$emit('result-event',this.input); //テキストボックスの入力値を親へ渡す
-      }
     }
   }
 </script>
